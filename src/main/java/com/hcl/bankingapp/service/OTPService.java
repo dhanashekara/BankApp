@@ -9,17 +9,22 @@ import com.hcl.bankingapp.utility.MailWithOTPService;
 
 @Service
 public class OTPService {
-	
+
 	@Autowired
 	MailWithOTPService mailWithOTPService;
 
-	public void generateOTPandSendMail(String email) {
-		
-		String body = "\\";
-		Random rand = new Random();
-		long otp = 1000 + rand.nextInt(9999);
-		mailWithOTPService.sendEmail(email, otp, "", body);
-		
-		
+	public Integer generateOTPandSendMail(String email,Long payeeAccountNumber) {
+		Integer otp = 0;
+		try {
+			Random rand = new Random();
+			otp = 1000 + rand.nextInt(9999);
+			String body = "OTP for Adding Payee with Account number " +payeeAccountNumber+" is "+ otp;
+			String subject = "ING Bank Transactions";
+			mailWithOTPService.sendEmail(email, subject, body);
+
+		} catch (Exception e) {
+			// throw new
+		}
+		return otp;
 	}
 }
