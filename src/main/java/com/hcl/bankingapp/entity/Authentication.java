@@ -10,32 +10,20 @@ public class Authentication {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long otpGen;
-	private String payeeId;
-	private int otp;
-
-	public Long getOtpGen() {
+	private Integer otpGen;
+	private Integer otp;
+	public Integer getOtpGen() {
 		return otpGen;
 	}
-
-	public void setOtpGen(Long otpGen) {
+	public void setOtpGen(Integer otpGen) {
 		this.otpGen = otpGen;
 	}
-
-	public String getPayeeId() {
-		return payeeId;
-	}
-
-	public void setPayeeId(String payeeId) {
-		this.payeeId = payeeId;
-	}
-
-	public int getOtp() {
+	public Integer getOtp() {
 		return otp;
 	}
-
-	public void setOtp(int otp) {
+	public void setOtp(Integer otp) {
 		this.otp = otp;
 	}
 
+	
 }

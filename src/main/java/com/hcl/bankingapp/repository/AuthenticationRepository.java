@@ -6,4 +6,6 @@ import com.hcl.bankingapp.entity.Authentication;
 
 public interface AuthenticationRepository extends JpaRepository<Authentication, Long> {
 
+	Authentication findByOtpGenAndOtp(Integer otpGen, Integer otp);
+
 }
