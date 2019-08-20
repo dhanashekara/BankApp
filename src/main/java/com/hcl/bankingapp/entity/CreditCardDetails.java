@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,5 +26,8 @@ public class CreditCardDetails {
 	private double creditAmount;
 	private String creditCardName;
 	private int cvv;
+	
+	@ManyToOne
+	UserDetails userDetails;
 	
 }
