@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
@@ -20,13 +21,14 @@ public class CreditCardDetails {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	private Long creditCardId;
 	private Long creditCardNumber;
 	private LocalDate expDate;
-	private double creditAmount;
+	private double creditBalance;
 	private String creditCardName;
 	private int cvv;
 	
+	@JoinColumn(name = "userId",referencedColumnName = "userId")
 	@ManyToOne
 	UserDetails userDetails;
 	

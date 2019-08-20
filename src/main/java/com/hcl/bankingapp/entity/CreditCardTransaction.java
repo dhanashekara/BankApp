@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
@@ -27,7 +28,9 @@ public class CreditCardTransaction {
 	private LocalDate transactionDate;
 	private String description;
 	private String paymentType;
+	private String receiverName;
 
+	@JoinColumn(name = "creditCardId",referencedColumnName = "creditCardId")
 	@ManyToOne
 	CreditCardDetails creditCardDetails;
 }

@@ -1,13 +1,14 @@
 package com.hcl.bankingapp.service;
 
-import org.springframework.stereotype.Service;
+import java.util.List;
 
-@Service
-public class CreditCardService {
+import com.hcl.bankingapp.dto.AccountDetailsDTO;
+import com.hcl.bankingapp.dto.CreditCardTransactionDTO;
 
-	public void getAccountDetails(Long userId) {
-		
-		
-		
-	}
+public interface CreditCardService {
+
+	AccountDetailsDTO getAccountDetails(Long userId);
+
+	List<CreditCardTransactionDTO> getStatement(Long userId);
+
 }
